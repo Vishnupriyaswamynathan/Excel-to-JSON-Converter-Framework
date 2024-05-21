@@ -38,6 +38,7 @@ class ExcelParser:
                 for sheet_name in sheets_to_parse:
                     df = pd.read_excel(file_path, sheet_name=sheet_name)
                     data = df.to_dict(orient='records')
+                    data = self._convert_timestamps(data)
                     
                     output_file_name = f"{base_file_name}_{sheet_name}.json"
                     output_file_path = os.path.join(output_dir, output_file_name)
@@ -45,8 +46,15 @@ class ExcelParser:
                     with open(output_file_path, 'w') as json_file:
                         json.dump(data, json_file, indent=4)
                 
-                self.logger.info(f"Successfully parsed and saved data for sheets: {sheets_to_parse}")
+                self.logger.info(f"Successfully parsed and saved data for excel file {base_file_name}.Parsed Sheets: {sheets_to_parse}")
             except Exception as e:
                 self.logger.error(f"Error parsing Excel file: {e}")
                 self.tracker.log_error(f"Error parsing Excel file: {e}")
                 return None
+
+    def _convert_timestamps(self, data):
+        for record in data:
+            for key, value in record.items():
+                if isinstance(value, pd.Timestamp):
+                    record[key] = value.isoformat()
+        return data
