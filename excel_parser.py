@@ -36,21 +36,28 @@ class ExcelParser:
                 base_file_name = os.path.splitext(os.path.basename(file_path))[0]
                 
                 for sheet_name in sheets_to_parse:
-                    df = pd.read_excel(file_path, sheet_name=sheet_name)
-                    data = df.to_dict(orient='records')
-                    data = self._convert_timestamps(data)
+                    try:
+                        df = pd.read_excel(file_path, sheet_name=sheet_name)
+                        data = df.to_dict(orient='records')
+                        data = self._convert_timestamps(data)
                     
-                    output_file_name = f"{base_file_name}_{sheet_name}.json"
-                    output_file_path = os.path.join(output_dir, output_file_name)
-                    
-                    with open(output_file_path, 'w') as json_file:
-                        json.dump(data, json_file, indent=4)
+                        output_file_name = f"{base_file_name}_{sheet_name}.json"
+                        output_file_path = os.path.join(output_dir, output_file_name)
+                        
+                        with open(output_file_path, 'w') as json_file:
+                            json.dump(data, json_file, indent=4)
                 
-                self.logger.info(f"Successfully parsed and saved data for excel file {base_file_name}.Parsed Sheets: {sheets_to_parse}")
+                    self.logger.info(f"Successfully parsed and saved data for excel file {base_file_name}.Parsed Sheets: {sheets_to_parse}")
+                    except Exception as sheet_error:
+                        error_message = f"Error parsing sheet '{sheet_name}' in file '{file_name}': {sheet_error}"
+                        self.logger.error(error_message)
+                        self.tracker.log_error(error_message)
+                        continue    # Continue with the next sheet
             except Exception as e:
-                self.logger.error(f"Error parsing Excel file: {e}")
-                self.tracker.log_error(f"Error parsing Excel file: {e}")
-                return None
+                error_message = f"Error reading Excel file '{file_name}': {file_error}"
+                self.logger.error(error_message)
+                self.tracker.log_error(error_message)
+                continue            # Continue with the next file
 
     def _convert_timestamps(self, data):
         for record in data:
