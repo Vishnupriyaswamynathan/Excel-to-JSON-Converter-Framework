@@ -34,6 +34,7 @@ pip install -r requirements.txt
 python main.py 
 ```
 - The converter will parse the Excel files, perform data validation, and generate corresponding JSON files in the output directory specified in the configuration(config.yaml).
+- In the current configuration, input files are expected to be located in the 'data' folder, while output files are generated in the same directory. However, this setup can be customized within the 'config.yaml' file, allowing users to specify different input and output directories. Additionally, the output file name will follow the format of 'inputfilename_sheetname.json'.
 
 ## Configuration
 
