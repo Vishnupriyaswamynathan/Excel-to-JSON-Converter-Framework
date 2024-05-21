@@ -53,7 +53,7 @@ class ExcelParser:
             for row in data:
                 # Check if all values in the row are empty
                 if not all(value == "" for value in row.values()):
-                    json.dump(row, json_file, indent=4)
+                    json.dump(row, json_file, indent=4, ensure_ascii=False)
                
     def handle_error(self, error_message):
         self.logger.error(error_message)
