@@ -45,14 +45,13 @@ class ExcelParser:
                         output_file_path = os.path.join(output_dir, output_file_name)
                         
                         with open(output_file_path, 'w') as json_file:
-                            json.dump(data, json_file, indent=4)
-                
-                    self.logger.info(f"Successfully parsed and saved data for excel file {base_file_name}.Parsed Sheets: {sheets_to_parse}")
+                            json.dump(data, json_file, indent=4)                        
                     except Exception as sheet_error:
                         error_message = f"Error parsing sheet '{sheet_name}' in file '{file_name}': {sheet_error}"
                         self.logger.error(error_message)
                         self.tracker.log_error(error_message)
                         continue    # Continue with the next sheet
+                self.logger.info(f"Successfully parsed and saved data for sheets: {sheets_to_parse}")
             except Exception as e:
                 error_message = f"Error reading Excel file '{file_name}': {file_error}"
                 self.logger.error(error_message)
