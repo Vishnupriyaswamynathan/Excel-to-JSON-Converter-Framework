@@ -23,4 +23,4 @@ output:
   directory: 'data/'        # Directory to save the JSON files
 
 chunk:
-  size: 100
+  size: 1000

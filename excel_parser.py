@@ -43,14 +43,17 @@ class ExcelParser:
         return df 
     
     def convert_df_to_dict(self, df):
-        df.fillna("", inplace=True)
+        df.fillna("",inplace=True)
         data = df.to_dict(orient='records')
         data = self._convert_timestamps(data)
         return data
     
     def save_data_to_json(self, data, output_file_path):
-        with open(output_file_path, 'w') as json_file:
-            json.dump(data, json_file, indent=4)
+        with open(output_file_path, 'w') as json_file:           
+            for row in data:
+                # Check if all values in the row are empty
+                if not all(value == "" for value in row.values()):
+                    json.dump(row, json_file, indent=4)
                
     def handle_error(self, error_message):
         self.logger.error(error_message)
