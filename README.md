@@ -44,7 +44,5 @@ The converter's behavior can be customized through the configuration file `confi
 - Output: Define the directory for saving JSON files (`directory`).
 - Chunk Size: Set the chunk size for processing large datasets.
 
-## Documentation
 
-For detailed documentation, including module descriptions, function signatures, and usage examples, refer to the project's documentation generated using Sphinx below:
 
