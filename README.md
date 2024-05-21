@@ -10,7 +10,7 @@ The Excel to JSON Converter is a Python application designed to parse Excel file
 - Error Tracking: Logs any data validation errors or warnings encountered during the conversion process for analysis.
 - Configurability: Configurable through a YAML configuration file, enabling users to customize input/output paths, chunk size and logging options.
 - Error Handling: Implemented error handling to handle errors during file parsing and JSON conversion, logging the encountered error within a specific sheet, and continues processing the remaining sheets in a file.
-- Unit Testing: Unit tests to ensure the functionality of the converter across different scenarios and edge cases.
+- Unit Testing: Unit tests to ensure the functionality of the converter across various scenarios.
 
 ## Installation
 
