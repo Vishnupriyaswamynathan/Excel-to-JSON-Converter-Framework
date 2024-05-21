@@ -17,7 +17,10 @@ input:
   # excel_file_path: 'data/input.xlsx'
   excel_directory: 'data/'  # Directory containing Excel files
   includes: []              # List of sheet names to include, parse all if empty
-  excludes: [Sheet1]        # List of sheet names to exclude
+  excludes: []        # List of sheet names to exclude
 
 output:
   directory: 'data/'        # Directory to save the JSON files
+
+chunk:
+  size: 100

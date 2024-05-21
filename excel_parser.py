@@ -37,21 +37,38 @@ class ExcelParser:
                 
                 for sheet_name in sheets_to_parse:
                     try:
+                        # Read the entire sheet first
                         df = pd.read_excel(file_path, sheet_name=sheet_name)
+                        
+                        # Drop rows with all NaN values and find the first non-empty row
+                        non_empty_df = df.dropna(how='all')
+                        
+                        # Check if there is any non-empty data
+                        if non_empty_df.empty:
+                            self.logger.info(f"No data found in file '{file_name}', sheet '{sheet_name}'")
+                            continue
+                        
+                        # Get the index of the first non-empty row
+                        first_non_empty_index = non_empty_df.index[0]
+                        
+                        # Read the sheet again from the first non-empty row onwards
+                        df = pd.read_excel(file_path, sheet_name=sheet_name, skiprows=range(first_non_empty_index))
+                        df = df.dropna(how='all')  # Drop rows where all elements are NaN
+                        
                         data = df.to_dict(orient='records')
                         data = self._convert_timestamps(data)
-                    
+                        
                         output_file_name = f"{base_file_name}_{sheet_name}.json"
                         output_file_path = os.path.join(output_dir, output_file_name)
                         
                         with open(output_file_path, 'w') as json_file:
-                            json.dump(data, json_file, indent=4)                        
+                            json.dump(data, json_file, indent=4)     
+                        self.logger.info(f"Successfully parsed and saved data for file {file_name}: {sheet_name}")                  
                     except Exception as sheet_error:
                         error_message = f"Error parsing sheet '{sheet_name}' in file '{file_name}': {sheet_error}"
                         self.logger.error(error_message)
                         self.tracker.log_error(error_message)
                         continue    # Continue with the next sheet
-                self.logger.info(f"Successfully parsed and saved data for sheets: {sheets_to_parse}")
             except Exception as e:
                 error_message = f"Error reading Excel file '{file_name}': {file_error}"
                 self.logger.error(error_message)
