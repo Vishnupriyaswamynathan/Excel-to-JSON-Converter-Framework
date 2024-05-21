@@ -1,33 +1,41 @@
 {
     "Name": "Haley",
     "Place": "IL",
-    "City": "Riverwood"
+    "City": "Riverwood",
+    "Special_Characters": "é, ü, ñ"
 }{
     "Name": "Alex",
     "Place": "FL",
-    "City": "Tampa"
+    "City": "Tampa",
+    "Special_Characters": "é, ü, ñ"
 }{
     "Name": "ABC",
     "Place": "TX",
-    "City": "Leander"
+    "City": "Leander",
+    "Special_Characters": "©, ®, ™, €"
 }{
     "Name": "XYZ",
     "Place": "",
-    "City": "Seattle"
+    "City": "Seattle",
+    "Special_Characters": "©, ®, ™, €"
 }{
     "Name": "",
     "Place": "IL",
-    "City": "Riverwood"
+    "City": "Riverwood",
+    "Special_Characters": "(\\n)"
 }{
     "Name": "Merged",
     "Place": "",
-    "City": ""
+    "City": "",
+    "Special_Characters": "(\\t)"
 }{
     "Name": "ABC",
     "Place": "TX",
-    "City": "Leander"
+    "City": "Leander",
+    "Special_Characters": "\"\""
 }{
     "Name": "XYZ",
     "Place": "",
-    "City": "Seattle"
+    "City": "Seattle",
+    "Special_Characters": ""
 }
