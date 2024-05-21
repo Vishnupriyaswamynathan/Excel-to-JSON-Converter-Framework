@@ -2,72 +2,40 @@
     "Name": "Haley",
     "Place": "IL",
     "City": "Riverwood",
-    "Special_Characters": "é, ü, ñ",
-    "Num1": 10.0,
-    "Num2": 20.0,
-    "Sum": 30
+    "Special_Characters": "é, ü, ñ"
 }{
     "Name": "Alex",
     "Place": "FL",
     "City": "Tampa",
-    "Special_Characters": "é, ü, ñ",
-    "Num1": 5.0,
-    "Num2": 10.0,
-    "Sum": 15
+    "Special_Characters": "é, ü, ñ"
 }{
     "Name": "ABC",
     "Place": "TX",
     "City": "Leander",
-    "Special_Characters": "©, ®, ™, €",
-    "Num1": 1.0,
-    "Num2": 2.0,
-    "Sum": 3
+    "Special_Characters": "©, ®, ™, €"
 }{
     "Name": "XYZ",
     "Place": "",
     "City": "Seattle",
-    "Special_Characters": "©, ®, ™, €",
-    "Num1": 2.0,
-    "Num2": 3.0,
-    "Sum": 5
+    "Special_Characters": "©, ®, ™, €"
 }{
     "Name": "",
     "Place": "IL",
     "City": "Riverwood",
-    "Special_Characters": "(\\n)",
-    "Num1": 4.0,
-    "Num2": 5.0,
-    "Sum": 9
+    "Special_Characters": "(\\n)"
 }{
     "Name": "Merged",
     "Place": "",
     "City": "",
-    "Special_Characters": "(\\t)",
-    "Num1": 100.0,
-    "Num2": 200.0,
-    "Sum": 300
-}{
-    "Name": "",
-    "Place": "",
-    "City": "",
-    "Special_Characters": "",
-    "Num1": "",
-    "Num2": "",
-    "Sum": 0
+    "Special_Characters": "(\\t)"
 }{
     "Name": "ABC",
     "Place": "TX",
     "City": "Leander",
-    "Special_Characters": "\"\"",
-    "Num1": 400.0,
-    "Num2": 500.0,
-    "Sum": 900
+    "Special_Characters": "\"\""
 }{
     "Name": "XYZ",
     "Place": "",
     "City": "Seattle",
-    "Special_Characters": "",
-    "Num1": 5.0,
-    "Num2": 6.0,
-    "Sum": 11
+    "Special_Characters": ""
 }

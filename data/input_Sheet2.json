@@ -1,125 +1,121 @@
 {
-    "Unnamed: 2": "Name",
-    "Unnamed: 3": "Place",
-    "Unnamed: 4": "City"
+    "Name": "Haley",
+    "Place": "IL",
+    "City": "Riverwood"
 }{
-    "Unnamed: 2": "Haley",
-    "Unnamed: 3": "IL",
-    "Unnamed: 4": "Riverwood"
+    "Name": "Alexis",
+    "Place": "FL",
+    "City": "Tampa"
 }{
-    "Unnamed: 2": "Alexis",
-    "Unnamed: 3": "FL",
-    "Unnamed: 4": "Tampa"
+    "Name": "Doris",
+    "Place": "TX",
+    "City": "Leander"
 }{
-    "Unnamed: 2": "Doris",
-    "Unnamed: 3": "TX",
-    "Unnamed: 4": "Leander"
+    "Name": "",
+    "Place": "AK",
+    "City": "Dallas"
 }{
-    "Unnamed: 2": "Lori",
-    "Unnamed: 3": "AK",
-    "Unnamed: 4": "Dallas"
+    "Name": "Tiffany",
+    "Place": "AZ",
+    "City": "Georgia"
 }{
-    "Unnamed: 2": "Tiffany",
-    "Unnamed: 3": "AZ",
-    "Unnamed: 4": "Georgia"
+    "Name": "Lexy",
+    "Place": "AR",
+    "City": "San Jose"
 }{
-    "Unnamed: 2": "Lexy",
-    "Unnamed: 3": "AR",
-    "Unnamed: 4": "San Jose"
+    "Name": "",
+    "Place": "",
+    "City": "Santa Barbara"
 }{
-    "Unnamed: 2": "Haley",
-    "Unnamed: 3": "IL",
-    "Unnamed: 4": "Santa Barbara"
+    "Name": "Alexis",
+    "Place": "FL",
+    "City": "Riverwood"
 }{
-    "Unnamed: 2": "Alexis",
-    "Unnamed: 3": "FL",
-    "Unnamed: 4": "Riverwood"
+    "Name": "Doris",
+    "Place": "TX",
+    "City": "Tampa"
 }{
-    "Unnamed: 2": "Doris",
-    "Unnamed: 3": "TX",
-    "Unnamed: 4": "Tampa"
+    "Name": "Lori",
+    "Place": "AK",
+    "City": ""
 }{
-    "Unnamed: 2": "Lori",
-    "Unnamed: 3": "AK",
-    "Unnamed: 4": "Leander"
+    "Name": "Tiffany",
+    "Place": "AZ",
+    "City": ""
 }{
-    "Unnamed: 2": "Tiffany",
-    "Unnamed: 3": "AZ",
-    "Unnamed: 4": "Dallas"
+    "Name": "Lexy",
+    "Place": "AR",
+    "City": "Georgia"
 }{
-    "Unnamed: 2": "Lexy",
-    "Unnamed: 3": "AR",
-    "Unnamed: 4": "Georgia"
+    "Name": "Haley",
+    "Place": "IL",
+    "City": "San Jose"
 }{
-    "Unnamed: 2": "Haley",
-    "Unnamed: 3": "IL",
-    "Unnamed: 4": "San Jose"
+    "Name": "Alexis",
+    "Place": "",
+    "City": "Santa Barbara"
 }{
-    "Unnamed: 2": "Alexis",
-    "Unnamed: 3": "FL",
-    "Unnamed: 4": "Santa Barbara"
+    "Name": "Doris",
+    "Place": "TX",
+    "City": "Riverwood"
 }{
-    "Unnamed: 2": "Doris",
-    "Unnamed: 3": "TX",
-    "Unnamed: 4": "Riverwood"
+    "Name": "Lori",
+    "Place": "AK",
+    "City": "Tampa"
 }{
-    "Unnamed: 2": "Lori",
-    "Unnamed: 3": "AK",
-    "Unnamed: 4": "Tampa"
+    "Name": "Tiffany",
+    "Place": "",
+    "City": "Leander"
 }{
-    "Unnamed: 2": "Tiffany",
-    "Unnamed: 3": "AZ",
-    "Unnamed: 4": "Leander"
+    "Name": "Lexy",
+    "Place": "AR",
+    "City": "Dallas"
 }{
-    "Unnamed: 2": "Lexy",
-    "Unnamed: 3": "AR",
-    "Unnamed: 4": "Dallas"
+    "Name": "Haley",
+    "Place": "IL",
+    "City": "Georgia"
 }{
-    "Unnamed: 2": "Haley",
-    "Unnamed: 3": "IL",
-    "Unnamed: 4": "Georgia"
+    "Name": "Alexis",
+    "Place": "FL",
+    "City": "San Jose"
 }{
-    "Unnamed: 2": "Alexis",
-    "Unnamed: 3": "FL",
-    "Unnamed: 4": "San Jose"
+    "Name": "Doris",
+    "Place": "TX",
+    "City": "Santa Barbara"
 }{
-    "Unnamed: 2": "Doris",
-    "Unnamed: 3": "TX",
-    "Unnamed: 4": "Santa Barbara"
+    "Name": "Lori",
+    "Place": "AK",
+    "City": "Riverwood"
 }{
-    "Unnamed: 2": "Lori",
-    "Unnamed: 3": "AK",
-    "Unnamed: 4": "Riverwood"
+    "Name": "Tiffany",
+    "Place": "AZ",
+    "City": "Tampa"
 }{
-    "Unnamed: 2": "Tiffany",
-    "Unnamed: 3": "AZ",
-    "Unnamed: 4": "Tampa"
+    "Name": "Lexy",
+    "Place": "AR",
+    "City": ""
 }{
-    "Unnamed: 2": "Lexy",
-    "Unnamed: 3": "AR",
-    "Unnamed: 4": "Leander"
+    "Name": "Haley",
+    "Place": "IL",
+    "City": "Dallas"
 }{
-    "Unnamed: 2": "Haley",
-    "Unnamed: 3": "IL",
-    "Unnamed: 4": "Dallas"
+    "Name": "Alexis",
+    "Place": "FL",
+    "City": "Georgia"
 }{
-    "Unnamed: 2": "Alexis",
-    "Unnamed: 3": "FL",
-    "Unnamed: 4": "Georgia"
+    "Name": "Doris",
+    "Place": "TX",
+    "City": "San Jose"
 }{
-    "Unnamed: 2": "Doris",
-    "Unnamed: 3": "TX",
-    "Unnamed: 4": "San Jose"
+    "Name": "Lori",
+    "Place": "AK",
+    "City": "Santa Barbara"
 }{
-    "Unnamed: 2": "Lori",
-    "Unnamed: 3": "AK",
-    "Unnamed: 4": "Santa Barbara"
+    "Name": "Tiffany",
+    "Place": "AZ",
+    "City": "Dallas"
 }{
-    "Unnamed: 2": "Tiffany",
-    "Unnamed: 3": "AZ",
-    "Unnamed: 4": "Dallas"
-}{
-    "Unnamed: 2": "Lexy",
-    "Unnamed: 3": "AR",
-    "Unnamed: 4": "Georgia"
+    "Name": "Lexy",
+    "Place": "",
+    "City": "Georgia"
 }
