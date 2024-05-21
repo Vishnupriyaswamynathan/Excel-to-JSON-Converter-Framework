@@ -15,7 +15,7 @@ def main():
     
     # Parse Excel file
     parser = ExcelParser(config)
-    data = parser.parse(config['input']['excel_file_path'])
+    data = parser.parse()
     
     if data:
         # Validate data
