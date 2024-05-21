@@ -31,7 +31,7 @@ pip install -r requirements.txt
 - Place your Excel files in the input directory specified in the configuration.
 - Run the converter using the below command in terminal.
 ```bash
-    - python main.py 
+python main.py 
 ```
 - The converter will parse the Excel files, perform data validation, and generate corresponding JSON files in the output directory specified in the configuration(config.yaml).
 
