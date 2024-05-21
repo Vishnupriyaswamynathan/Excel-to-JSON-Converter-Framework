@@ -43,8 +43,9 @@ class ExcelParser:
         return df 
     
     def convert_df_to_dict(self, df):
-        df.fillna("",inplace=True)
-        data = df.to_dict(orient='records')
+        df_evaluated = df.applymap(lambda x: x if not isinstance(x, str) else df.eval(x))
+        df_evaluated.fillna("", inplace=True)
+        data = df_evaluated.to_dict(orient='records')
         data = self._convert_timestamps(data)
         return data
     
