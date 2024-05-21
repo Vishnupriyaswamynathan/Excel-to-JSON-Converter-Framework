@@ -1,0 +1,32 @@
+[
+    {
+        "Name": "Haley",
+        "Place": "IL",
+        "City": "Riverwood"
+    },
+    {
+        "Name": "Alex",
+        "Place": "FL",
+        "City": "Tampa"
+    },
+    {
+        "Name": "ABC",
+        "Place": "TX",
+        "City": "Leander"
+    },
+    {
+        "Name": "XYZ",
+        "Place": "",
+        "City": "Seattle"
+    },
+    {
+        "Name": "",
+        "Place": "IL",
+        "City": "Riverwood"
+    },
+    {
+        "Name": "Merged",
+        "Place": "",
+        "City": ""
+    }
+]

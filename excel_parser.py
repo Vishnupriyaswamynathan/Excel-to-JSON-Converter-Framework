@@ -20,43 +20,30 @@ class ExcelParser:
     
     def parse_sheet(self, file_path, sheet_name):
         chunk_size = self.config['chunk'].get('size')
-        print("chunk_size",chunk_size)
         df = pd.read_excel(file_path, sheet_name=sheet_name)
+        any_lines_executed = False
+        
+        df.dropna(axis=0, how='all', inplace=True)  # Drop rows where all values are missing
+        df.dropna(axis=1, how='all', inplace=True)
+
         non_empty_df = self.drop_empty_rows(df,file_path,sheet_name)
         if non_empty_df.empty:
             self.logger.info(f"No data found in sheet '{sheet_name}'")
             return None
         data = self.convert_df_to_dict(non_empty_df)
         return data
+
     def drop_empty_rows(self, df,file_path,sheet_name):
-        non_empty_df = df.dropna(how='all')
+        non_empty_df = df.dropna(how='all')        
         header_row_index = non_empty_df.first_valid_index()
-         # Read the Excel file again, this time setting the first non-empty row as the header
-        df = pd.read_excel(file_path, sheet_name=sheet_name, skiprows=range(header_row_index), header=0)
-    
+        # setting the first non-empty row as the header
+        df = pd.read_excel(file_path, sheet_name=sheet_name, skiprows=range(header_row_index), header=0)    
         # Drop any completely empty columns
-        df = df.dropna(axis=1, how='all')
-    
+        df = df.dropna(axis=1, how='all')    
         return df 
-    # def drop_empty_rows(self, df,file_path,sheet_name):
-      #  non_empty_df = df.dropna(how='all')
-       # header_row_index = non_empty_df.first_valid_index()
-        # print("header_row_index",header_row_index)
-        # df = pd.read_excel(file_path, sheet_name=sheet_name, header=None)
-        # df.columns = df.iloc[header_row_index]
-        # df = df[header_row_index + 1:]
-        # df.reset_index(drop=True, inplace=True)
-        # df = df.dropna(axis=1, how='all')
-        # # df = pd.read_excel(file_path, sheet_name=sheet_name, header=header_row_index)
-        # # first_non_empty_index = non_empty_df.index[0]
-        # # df = pd.read_excel(file_path, sheet_name=sheet_name, skiprows=range(first_non_empty_index))
-        # # df = df.dropna(how='all')
-        #  # Reset the header names if they contain "Unnamed"
-        # # df.columns = [c if not c.startswith("Unnamed") else f'col_{i}' for i, c in enumerate(df.columns)]
-        # # df = df.dropna(axis=1, how='all')
-        # return df
     
     def convert_df_to_dict(self, df):
+        df.fillna("", inplace=True)
         data = df.to_dict(orient='records')
         data = self._convert_timestamps(data)
         return data
