@@ -19,6 +19,8 @@ class ExcelParser:
         return sheets_to_parse
     
     def parse_sheet(self, file_path, sheet_name):
+        chunk_size = self.config['chunk'].get('size')
+        print("chunk_size",chunk_size)
         df = pd.read_excel(file_path, sheet_name=sheet_name)
         non_empty_df = self.drop_empty_rows(df,file_path,sheet_name)
         if non_empty_df.empty:
