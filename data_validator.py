@@ -7,7 +7,7 @@ class DataValidator:
 
     def validate(self, data):
         errors = []
-        # Example validation: check for empty rows
+        # check for empty rows
         for row in data:
             if not any(row.values()):
                 errors.append(f"Empty row detected: {row}")

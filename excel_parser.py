@@ -12,6 +12,7 @@ class ExcelParser:
         self.tracker = DataTracker()
     
     def get_sheets_to_parse(self, all_sheets, includes, excludes):
+        """Method to the filter sheets to be parsed based on configurations."""
         if includes:
             sheets_to_parse = [sheet for sheet in includes if sheet not in excludes]
         else:
@@ -19,12 +20,13 @@ class ExcelParser:
         return sheets_to_parse
     
     def parse_sheet(self, file_path, sheet_name):
-        chunk_size = self.config['chunk'].get('size')
+        """Method to parse a specific sheet from Excel file."""
+        chunk_size = self.config['chunk'].get('size')   #Retrieve chunk size from config
         df = pd.read_excel(file_path, sheet_name=sheet_name)
         any_lines_executed = False
         
         df.dropna(axis=0, how='all', inplace=True)  # Drop rows where all values are missing
-        df.dropna(axis=1, how='all', inplace=True)
+        df.dropna(axis=1, how='all', inplace=True)  # Drop columns where all values are missing
 
         non_empty_df = self.drop_empty_rows(df,file_path,sheet_name)
         if non_empty_df.empty:
@@ -34,34 +36,38 @@ class ExcelParser:
         return data
 
     def drop_empty_rows(self, df,file_path,sheet_name):
+        """Method to drop empty rows from a DataFrame."""
         non_empty_df = df.dropna(how='all')        
         header_row_index = non_empty_df.first_valid_index()
-        # setting the first non-empty row as the header
+        # setting the first non-empty row as header
         df = pd.read_excel(file_path, sheet_name=sheet_name, skiprows=range(header_row_index), header=0)    
         # Drop any completely empty columns
         df = df.dropna(axis=1, how='all')    
         return df 
     
     def convert_df_to_dict(self, df):
+        """Method to convert DataFrame to dictionary."""
         df.fillna("",inplace=True)
         data = df.to_dict(orient='records')
-        data = self._convert_timestamps(data)
+        data = self._convert_timestamps(data)       # Converting timestamps to ISO format
         return data
     
     def save_data_to_json(self, data, output_file_path):
+        """Method to save data to a JSON file."""
         with open(output_file_path, 'w') as json_file:           
             for row in data:
-                # Check if all values in the row are empty
+                # Check if all values in row are empty
                 if not all(value == "" for value in row.values()):
                     json.dump(row, json_file, indent=4, ensure_ascii=False)
                
     def handle_error(self, error_message):
+        """Method to handle errors by logging and tracking."""
         self.logger.error(error_message)
         self.tracker.log_error(error_message)
         
     def parse(self):
-        # Get input directory from configuration
-        excel_directory = self.config['input']['excel_directory']
+        """Method to parse Excel files."""        
+        excel_directory = self.config['input']['excel_directory']       # Retrieve input directory from configuration
         # List all files in the input directory
         xlsx_files = [file for file in os.listdir(excel_directory) if file.endswith('.xlsx')]
         for file_name in xlsx_files:
@@ -95,6 +101,7 @@ class ExcelParser:
                 continue            # Continue with the next file
 
     def _convert_timestamps(self, data):
+        """Method to convert timestamps in data to ISO format."""
         for record in data:
             for key, value in record.items():
                 if isinstance(value, pd.Timestamp):
